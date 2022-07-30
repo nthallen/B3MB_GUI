@@ -6,6 +6,7 @@
 class dataField {
 public:
   dataField(QGraphicsScene *scene, const char *label, qreal x, qreal y);
+  void moveRefToTop();
   inline qreal right() { return boundRec.right(); }
   inline qreal left() { return boundRec.left(); }
   inline qreal top() { return boundRec.top(); }
@@ -14,6 +15,7 @@ public:
   inline qreal mixX() { return (boundRec.left()+boundRec.right())/2; }
 protected:
   QGraphicsTextItem *Text;
+  QGraphicsRectItem *Rect;
   QRectF boundRec;
 };
 

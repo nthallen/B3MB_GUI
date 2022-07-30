@@ -1,12 +1,14 @@
-#ifndef FUSE_H
-#define FUSE_H
+#ifndef SWITCH_H
+#define SWITCH_H
+
 #include <QGraphicsItem>
 #include <QGraphicsScene>
+#include <QPainter>
 
-class Fuse : public QGraphicsItem
+class Switch : public QGraphicsItem
 {
 public:
-  Fuse(QGraphicsScene *scene, qreal x, qreal y, qreal scale);
+  Switch(QGraphicsScene *scene, qreal x, qreal y, qreal scale);
   virtual QRectF boundingRect() const;
   virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
   inline qreal right() { return bounds.right(); }
@@ -15,4 +17,4 @@ protected:
   QRectF bounds;
 };
 
-#endif // FUSE_H
+#endif // SWITCH_H
