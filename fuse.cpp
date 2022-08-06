@@ -12,7 +12,7 @@ Fuse::Fuse(QGraphicsScene *scene, qreal x, qreal y, qreal scale)
     bounds(0, -scale, 6*scale, 2*scale)
 {
   // update();
-  setPos(x,y);
+  // setPos(x,y);
   bounds.adjust(x,y,x,y);
   scene->addItem(this);
 }
@@ -22,8 +22,12 @@ QRectF Fuse::boundingRect() const {
 }
 
 void Fuse::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
-  painter->drawLine(0, 0, scale, 0);
-  painter->drawLine(5*scale, 0, 6*scale, 0);
-  painter->drawArc(QRectF(scale,-scale,2*scale,2*scale), 0*16, 180*16);
-  painter->drawArc(QRectF(3*scale,-scale,2*scale,2*scale),0*16,-180*16);
+  qreal oldWidth = painter->pen().widthF();
+  QPen const &pen = painter->pen();
+  pen.setWidthF(2);
+  painter->drawLine(x, y, x+scale, y);
+  painter->drawLine(x+5*scale, y, x+6*scale, y);
+  painter->drawArc(QRectF(x+scale,y-scale,2*scale,2*scale), 0*16, 180*16);
+  painter->drawArc(QRectF(x+3*scale,y-scale,2*scale,2*scale),0*16,-180*16);
+  painter->pen().setWidth(oldWidth);
 }

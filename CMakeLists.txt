@@ -17,6 +17,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(PROJECT_SOURCES
         fuse.h fuse.cpp
         switch.h switch.cpp
+        b3mbchannel.h b3mbchannel.cpp
         main.cpp
         mainwindow.cpp
         mainwindow.h

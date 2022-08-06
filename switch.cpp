@@ -3,20 +3,20 @@
 Switch::Switch(QGraphicsScene *scene, qreal x, qreal y, qreal scale)
   : QGraphicsItem(),
   x(x), y(y), scale(scale),
-  bounds(0, -1.5*scale, 4*scale, 1.5*scale+2)
+  Sbounds(0, -1.5*scale, 4*scale, 1.5*scale+2)
 {
-  setPos(x,y);
-  bounds.adjust(x,y,x,y);
+  // setPos(x,y);
+  Sbounds.adjust(x,y,x,y);
   scene->addItem(this);
 }
 
 QRectF Switch::boundingRect() const {
-  return bounds;
+  return Sbounds;
 }
 
 void Switch::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-  painter->drawLine(0, 0, scale, 0);
-  painter->drawLine(3*scale, 0, 4*scale, 0);
-  painter->drawLine(scale, 0, (1+1.414)*scale, -1.414*scale);
+  painter->drawLine(x, y, x+scale, y);
+  painter->drawLine(x+3*scale, y, x+4*scale, y);
+  painter->drawLine(x+scale, y, x+(1+1.414)*scale, y-1.414*scale);
 }
