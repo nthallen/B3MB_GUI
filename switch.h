@@ -22,6 +22,7 @@ public:
 protected:
   qreal x, y, scale;
   QRectF Sbounds;
+  QPen myPen;
 };
 
 #endif // SWITCH_H

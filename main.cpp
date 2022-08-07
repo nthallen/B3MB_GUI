@@ -16,12 +16,13 @@ int main(int argc, char *argv[])
   MainWindow w;
   QGraphicsScene scene;
   QGraphicsView view(&scene,&w);
-  const qreal wireLen = 21;
+  view.setRenderHints(QPainter::Antialiasing);
+  const qreal wireLen = 30;
   const qreal padding = 150;
 
-  QPushButton *next = new QPushButton("Next");
-  QGraphicsProxyWidget *nextp = scene.addWidget(next);
-  nextp->setPos(QPointF(padding/2,padding/2));
+//  QPushButton *next = new QPushButton("Next");
+//  QGraphicsProxyWidget *nextp = scene.addWidget(next);
+//  nextp->setPos(QPointF(padding/2,padding/2));
 
   B3MBChannel Chan1(&scene, wireLen, padding, padding);
 

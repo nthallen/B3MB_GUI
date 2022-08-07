@@ -20,6 +20,7 @@ public:
 protected:
   qreal x, y, scale;
   QRectF bounds;
+  QPen myPen;
 };
 
 #endif // FUSE_H
