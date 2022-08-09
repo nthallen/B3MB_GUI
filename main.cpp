@@ -14,6 +14,7 @@
 int main(int argc, char *argv[])
 {
   QApplication a(argc, argv);
+  a.setStyleSheet("QLabel { font: bold 20px; }");
   MainWindow w;
   QGraphicsScene scene;
   QGraphicsView view(&scene,&w);
