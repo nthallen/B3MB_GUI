@@ -2,6 +2,8 @@
 #define DATAFIELD_H
 #include <QGraphicsScene>
 #include <QGraphicsTextItem>
+#include <QGraphicsProxyWidget>
+#include <QLabel>
 
 class dataField {
 public:
@@ -15,8 +17,10 @@ public:
   inline qreal midY() { return (boundRec.top()+boundRec.bottom())/2; }
   inline qreal mixX() { return (boundRec.left()+boundRec.right())/2; }
 protected:
-  QGraphicsTextItem *Text;
-  QGraphicsRectItem *Rect;
+  QLabel *Text;
+  // QGraphicsTextItem *Text;
+  // QGraphicsRectItem *Rect;
+  QGraphicsProxyWidget *W;
   QRectF boundRec;
 };
 
