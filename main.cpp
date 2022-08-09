@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 //  nextp->setPos(QPointF(padding/2,padding/2));
 
   // B3MBChannel Chan1(&scene, wireLen, padding, padding);
-  b3mbCan Can1(&scene, wireLen, padding, padding);
+  b3mbCan Can1(&scene, wireLen, padding, padding, true);
 
   scene.setSceneRect(QRectF(0, 0, Can1.right()+padding, Can1.bottom()+padding));
   view.setMinimumHeight(Can1.bottom()+padding+10);

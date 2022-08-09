@@ -12,7 +12,7 @@ class B3MBChannel : public QObject
   Q_OBJECT
 public:
   explicit B3MBChannel(QGraphicsScene *scene, qreal wireLen, qreal x, qreal y,
-                       QObject *parent = nullptr);
+                       bool hasBattery, QObject *parent = nullptr);
   inline qreal bottom() { return max_y; }
   inline qreal right() { return max_x; }
 
@@ -23,6 +23,7 @@ private:
   qreal wireLen;
   qreal x, y;
   qreal max_x, max_y;
+  bool hasBattery;
   dataField *Batt, *VBatt, *IBatt, *ILoad, *VLoad, *Load;
   Fuse *F11, *F12;
   Switch *S11, *S12;

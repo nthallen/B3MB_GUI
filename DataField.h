@@ -7,6 +7,7 @@ class dataField {
 public:
   dataField(QGraphicsScene *scene, const char *label, qreal x, qreal y);
   void moveRefToTop();
+  void setVisible(bool isVisible);
   inline qreal right() { return boundRec.right(); }
   inline qreal left() { return boundRec.left(); }
   inline qreal top() { return boundRec.top(); }

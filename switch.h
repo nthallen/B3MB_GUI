@@ -12,6 +12,8 @@ public:
   virtual QRectF boundingRect() const override;
   virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
   inline qreal right() { return Sbounds.right(); }
+  void setClosed(bool isClosed);
+  void toggle();
   enum { Type = UserType + 2 };
 
   int type() const override
@@ -20,9 +22,12 @@ public:
       return Type;
   }
 protected:
+  virtual void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+  virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
   qreal x, y, scale;
   QRectF Sbounds;
   QPen myPen;
+  bool closed;
 };
 
 #endif // SWITCH_H

@@ -16,3 +16,8 @@ void dataField::moveRefToTop()
   Rect->moveBy(dx,dy);
   boundRec.adjust(dx,dy,dx,dy);
 }
+
+void dataField::setVisible(bool isVisible) {
+  Text->setVisible(isVisible);
+  Rect->setVisible(isVisible);
+}

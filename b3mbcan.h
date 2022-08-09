@@ -9,7 +9,7 @@ class b3mbCan : public QObject
   Q_OBJECT
 public:
   explicit b3mbCan(QGraphicsScene *scene, qreal wireLen, qreal x, qreal y,
-                   QObject *parent = nullptr);
+                   bool is100V, QObject *parent = nullptr);
   inline qreal bottom() { return max_y; }
   inline qreal right() { return max_x; }
 
@@ -18,6 +18,7 @@ private:
   QGraphicsScene *scene;
   qreal wireLen;
   qreal x, y;
+  bool is100V;
   qreal max_x, max_y;
   B3MBChannel *Chan[4];
 };
