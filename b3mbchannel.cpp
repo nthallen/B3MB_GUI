@@ -63,6 +63,7 @@ B3MBChannel::B3MBChannel(QGraphicsScene *scene, qreal wireLen, qreal x, qreal y,
   scene->addEllipse(QRectF(x1+wireLen-1.5*width,y1-1.5*width,3*width,3*width),
                     QPen(),QBrush(QColor(0,0,0)));
 
+  busPos = QPointF(x1+wireLen,y1);
   if (hasBattery) {
     x2 = x1 + 2*wireLen;
     scene->addLine(x1,y1,x2,y1,line_pen);

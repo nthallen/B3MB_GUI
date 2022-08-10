@@ -21,6 +21,7 @@ private:
   bool is100V;
   qreal max_x, max_y;
   B3MBChannel *Chan[4];
+  dataField *BusV;
 };
 
 #endif // B3MBCAN_H

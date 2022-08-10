@@ -12,6 +12,8 @@ b3mbCan::b3mbCan(QGraphicsScene *scene, qreal wireLen, qreal x, qreal y,
 {
   qreal x1 = x;
   qreal y1 = y;
+  BusV = new dataField(scene, "100.125 V",x1,y1);
+  y1 = BusV->bottom() + wireLen;
   Chan[0] = new B3MBChannel(scene, wireLen, x1, y1, true, parent);
   max_x = Chan[0]->right();
   max_y = Chan[0]->bottom();
@@ -21,4 +23,7 @@ b3mbCan::b3mbCan(QGraphicsScene *scene, qreal wireLen, qreal x, qreal y,
     max_x = __max(max_x, Chan[i]->right());
     max_y = __max(max_y, Chan[i]->bottom());
   }
+  QPointF busBase = Chan[3]->getBusPos();
+  scene->addLine(busBase.x(), busBase.y(), busBase.x(), BusV->bottom());
+  BusV->moveBy(busBase.x()-BusV->midX(),0);
 }

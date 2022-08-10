@@ -3,6 +3,7 @@
 
 #include <QGraphicsScene>
 #include <QObject>
+#include <QPointF>
 #include "DataField.h"
 #include "fuse.h"
 #include "switch.h"
@@ -15,6 +16,7 @@ public:
                        bool hasBattery, QObject *parent = nullptr);
   inline qreal bottom() { return max_y; }
   inline qreal right() { return max_x; }
+  inline QPointF getBusPos() { return busPos; }
 
 signals:
 
@@ -23,6 +25,7 @@ private:
   qreal wireLen;
   qreal x, y;
   qreal max_x, max_y;
+  QPointF busPos;
   bool hasBattery;
   dataField *Batt, *VBatt, *IBatt, *ILoad, *VLoad, *Load;
   Fuse *F11, *F12;

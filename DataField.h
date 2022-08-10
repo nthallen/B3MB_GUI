@@ -15,7 +15,8 @@ public:
   inline qreal top() { return boundRec.top(); }
   inline qreal bottom() { return boundRec.bottom(); }
   inline qreal midY() { return (boundRec.top()+boundRec.bottom())/2; }
-  inline qreal mixX() { return (boundRec.left()+boundRec.right())/2; }
+  inline qreal midX() { return (boundRec.left()+boundRec.right())/2; }
+  inline void moveBy(qreal dx, qreal dy) { W->moveBy(dx, dy); }
 protected:
   QLabel *Text;
   // QGraphicsTextItem *Text;
